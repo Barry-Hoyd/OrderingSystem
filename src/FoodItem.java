@@ -1,13 +1,11 @@
-public class FoodItem
-{
+public class FoodItem {
     private String name, description;
     private double price;
     private int calories;
     private boolean vegetarian, vegan, glutenfree, dairyfree, kosher, halal;
-    private ItemType itemType;
+    private final ItemType itemType;
 
-    public FoodItem(String name, String description, double price, int calories, boolean vegetarian, boolean vegan, boolean glutenfree, boolean dairyfree, boolean kosher, boolean halal, ItemType itemType)
-    {
+    public FoodItem(String name, String description, double price, int calories, boolean vegetarian, boolean vegan, boolean glutenfree, boolean dairyfree, boolean kosher, boolean halal, ItemType itemType) {
         this.name = name;
         this.description = description;
         this.price = price;
@@ -21,114 +19,92 @@ public class FoodItem
         this.itemType = itemType;
     }
 
-    public String getName()
-    {
+    public String getName() {
         return name;
     }
 
-    public void setName(String name)
-    {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public String getDescription()
-    {
+    public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description)
-    {
+    public void setDescription(String description) {
         this.description = description;
     }
 
-    public double getPrice()
-    {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(double price)
-    {
+    public void setPrice(double price) {
         this.price = price;
     }
 
-    public int getCalories()
-    {
+    public int getCalories() {
         return calories;
     }
 
-    public void setCalories(int calories)
-    {
+    public void setCalories(int calories) {
         this.calories = calories;
     }
 
-    public boolean isVegetarian()
-    {
+    public boolean isVegetarian() {
         return vegetarian;
     }
 
-    public void setVegetarian(boolean vegetarian)
-    {
+    public void setVegetarian(boolean vegetarian) {
         this.vegetarian = vegetarian;
     }
 
-    public boolean isVegan()
-    {
+    public boolean isVegan() {
         return vegan;
     }
 
-    public void setVegan(boolean vegan)
-    {
+    public void setVegan(boolean vegan) {
         this.vegan = vegan;
     }
 
-    public boolean isGlutenfree()
-    {
+    public boolean isGlutenfree() {
         return glutenfree;
     }
 
-    public void setGlutenfree(boolean glutenfree)
-    {
+    public void setGlutenfree(boolean glutenfree) {
         this.glutenfree = glutenfree;
     }
 
-    public boolean isDairyfree()
-    {
+    public boolean isDairyfree() {
         return dairyfree;
     }
 
-    public void setDairyfree(boolean dairyfree)
-    {
+    public void setDairyfree(boolean dairyfree) {
         this.dairyfree = dairyfree;
     }
 
-    public boolean isKosher()
-    {
+    public boolean isKosher() {
         return kosher;
     }
 
-    public void setKosher(boolean kosher)
-    {
+    public void setKosher(boolean kosher) {
         this.kosher = kosher;
     }
 
-    public boolean isHalal()
-    {
+    public boolean isHalal() {
         return halal;
     }
 
-    public void setHalal(boolean halal)
-    {
+    public void setHalal(boolean halal) {
         this.halal = halal;
     }
 
-    public ItemType getItemType()
-    {
+    public ItemType getItemType() {
         return itemType;
     }
 
     @Override
-    public String toString()
-    {
-        return itemType + " " + description;
+    public String toString() {
+        return name + "\n" + description + "\n"+ "Calories: " + calories + " Cost: £" + price;
     }
 }

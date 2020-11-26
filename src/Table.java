@@ -1,67 +1,79 @@
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.util.ArrayList;
 
-public class Table
-{
+public class Table {
     private int tableNumber, numberOfDiners, totalNumberOfCalories;
     private double totalCost;
-    private ArrayList<FoodItem> itemsOnOrder;
+    private final ArrayList<FoodItem> itemsOnOrder;
+    private final ArrayList<FoodItem> returnList= new ArrayList<>();
 
-    public Table(int tableNumber, int numberOfDiners)
-    {
+    public Table(int tableNumber, int numberOfDiners) {
         this.tableNumber = tableNumber;
         this.numberOfDiners = numberOfDiners;
         itemsOnOrder = new ArrayList<>();
     }
 
-    public int getTableNumber()
-    {
+    public int getTableNumber() {
         return tableNumber;
     }
 
-    public void setTableNumber(int tableNumber)
-    {
+    public void setTableNumber(int tableNumber) {
         this.tableNumber = tableNumber;
     }
 
-    public int getNumberOfDiners()
-    {
+    public int getNumberOfDiners() {
         return numberOfDiners;
     }
 
-    public void setNumberOfDiners(int numberOfDiners)
-    {
+    public void setNumberOfDiners(int numberOfDiners) {
         this.numberOfDiners = numberOfDiners;
     }
 
-    public void addToOrder(FoodItem item)
-    {
+    public void addToOrder(FoodItem item) {
         itemsOnOrder.add(item);
     }
 
-    public int calculateTotalCalories()
-    {
-        for (FoodItem foodItem: itemsOnOrder)
-        {
+    public void removeFromOrder(FoodItem item) {
+        itemsOnOrder.remove(item);
+    }
+
+    public boolean onOrder(FoodItem item) {
+        boolean onOrder = false;
+        for(FoodItem foodItem: itemsOnOrder) {
+            if (foodItem.getName().equals(item.getName())) {
+                onOrder = true;
+                break;
+            }
+        }
+        return onOrder;
+    }
+
+    public int calculateTotalCalories() {
+        for (FoodItem foodItem: itemsOnOrder) {
             totalNumberOfCalories += foodItem.getCalories();
         }
         return totalNumberOfCalories;
     }
 
-    public double calculateTotalCost()
-    {
-        for (FoodItem foodItem: itemsOnOrder)
-        {
+    public double calculateTotalCost() {
+        for (FoodItem foodItem: itemsOnOrder) {
             totalCost += foodItem.getPrice();
         }
         return totalCost;
     }
 
-    public void printTableOrder()
-    {
-        for(FoodItem foodItem: itemsOnOrder)
-        {
-            System.out.println(foodItem);
-        }
+    public ObservableList<FoodItem> printTableOrder() {
+        returnList.addAll(itemsOnOrder);
+        return FXCollections.observableArrayList(returnList);
     }
 
+    @Override
+    public String toString() {
+        return "Table{" +
+                "tableNumber=" + tableNumber +
+                ", numberOfDiners=" + numberOfDiners +
+                '}';
+    }
 }

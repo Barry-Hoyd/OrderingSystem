@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="280.0" maxWidth="280.0" minHeight="280.0" minWidth="280.0" prefHeight="280.0" prefWidth="280.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PaymentScreenCardController">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="44.0" prefWidth="227.0">
+         <children>
+            <Label text="Card Number:" />
+            <TextField fx:id="cardNumbertxt" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="41.0" prefWidth="227.0">
+         <children>
+            <Label text="Expiry Date:">
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="expDatetxt" prefHeight="25.0" prefWidth="96.0">
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="227.0">
+         <children>
+            <Label prefHeight="17.0" prefWidth="55.0" text="CCV:">
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="ccvtxt" prefHeight="25.0" prefWidth="68.0">
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </TextField>
+            <Button fx:id="submitDetails" mnemonicParsing="false" onAction="#submitDetails" prefHeight="25.0" prefWidth="129.0" text="Sumbit Details">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <padding>
+            <Insets right="20.0" />
+         </padding>
+      </HBox>
+      <Label fx:id="totallbl" text="Total:">
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </Label>
+      <Label fx:id="totalPaidlbl" text="Total Paid:" />
+      <Label fx:id="cardDetailslbl" text="Card Details">
+         <padding>
+            <Insets top="20.0" />
+         </padding>
+      </Label>
+   </children>
+</VBox>

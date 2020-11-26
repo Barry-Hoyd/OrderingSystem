@@ -1,4 +1,3 @@
-enum  ItemType
-{
+enum  ItemType {
     STARTER, MAIN, DESERT, DRINK;
 }

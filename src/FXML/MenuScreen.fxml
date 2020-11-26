@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane maxHeight="400.0" maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MenuScreenController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="430.0" minWidth="10.0" prefWidth="401.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="199.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="251.0" minHeight="0.0" prefHeight="60.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="267.0" minHeight="0.0" prefHeight="41.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="338.0" minHeight="10.0" prefHeight="240.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="338.0" minHeight="10.0" prefHeight="103.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <HBox alignment="CENTER" prefHeight="61.0" prefWidth="384.0">
+         <children>
+            <Label fx:id="noOfCourseslbl" text="Diner 1 please enter the number of courses you want: " />
+            <TextField fx:id="noOfCoursestxt" prefHeight="25.0" prefWidth="76.0" />
+         </children>
+      </HBox>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+         <children>
+            <Button fx:id="submitNoOfCoursesbtn" layoutX="19.0" layoutY="18.0" mnemonicParsing="false" onAction="#submitNumberOfCourses" text="Submit Number Of Courses" />
+         </children>
+      </AnchorPane>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+         <children>
+            <Button fx:id="menuGoBackbtn" mnemonicParsing="false" onAction="#goBackMenu" text="&lt;">
+               <HBox.margin>
+                  <Insets right="40.0" />
+               </HBox.margin>
+            </Button>
+            <Label fx:id="foodTypelbl" text="Starters">
+               <HBox.margin>
+                  <Insets right="40.0" />
+               </HBox.margin>
+            </Label>
+            <Button fx:id="menuGoForwardbtn" mnemonicParsing="false" onAction="#goForwardMenu" text="&gt;">
+               <HBox.margin>
+                  <Insets right="40.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets left="20.0" right="20.0" />
+         </opaqueInsets>
+         <GridPane.margin>
+            <Insets left="20.0" right="20.0" />
+         </GridPane.margin>
+      </HBox>
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <children>
+            <Button fx:id="addToOrderbtn" disable="true" maxWidth="150.0" mnemonicParsing="false" onAction="#addItem" prefWidth="150.0" text="Add To Order">
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="removeFromOrderbtn" disable="true" maxWidth="150.0" mnemonicParsing="false" onAction="#removeItem" prefWidth="150.0" text="Remove From Order">
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="luckyDipbtn" disable="true" maxWidth="150.0" mnemonicParsing="false" onAction="#addLuckyDip" prefWidth="150.0" text="Lucky Dip">
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="submitOrderbtn" disable="true" maxWidth="150.0" mnemonicParsing="false" onAction="#submitOrder" prefWidth="150.0" text="Submit Order" />
+         </children>
+      </VBox>
+      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="3">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <CheckBox fx:id="vegetarianCheckBox" mnemonicParsing="false" onAction="#sortVegetarian" text="Vegetarian">
+                     <padding>
+                        <Insets right="15.0" />
+                     </padding>
+                  </CheckBox>
+                  <CheckBox fx:id="veganCheckBox" mnemonicParsing="false" onAction="#sortVegan" text="Vegan">
+                     <padding>
+                        <Insets right="15.0" />
+                     </padding>
+                  </CheckBox>
+                  <CheckBox fx:id="glutenFreeCheckBox" mnemonicParsing="false" onAction="#sortGlutenFree" text="Gluten Free">
+                     <padding>
+                        <Insets right="15.0" />
+                     </padding>
+                  </CheckBox>
+                  <CheckBox fx:id="dairyFreeCheckBox" mnemonicParsing="false" onAction="#sortDairyFree" text="Dairy Free">
+                     <padding>
+                        <Insets right="15.0" />
+                     </padding>
+                  </CheckBox>
+               </children>
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <CheckBox fx:id="kosherCheckBox" mnemonicParsing="false" onAction="#sortKosher" text="Kosher">
+                     <padding>
+                        <Insets right="15.0" />
+                     </padding>
+                  </CheckBox>
+                  <CheckBox fx:id="halalCheckBox" mnemonicParsing="false" onAction="#sortHalal" text="Halal">
+                     <padding>
+                        <Insets right="15.0" />
+                     </padding>
+                  </CheckBox>
+                  <CheckBox fx:id="containsAlcoholCheckBox" disable="true" mnemonicParsing="false" onAction="#sortAlcohol" text="Contains Alcohol">
+                     <padding>
+                        <Insets right="15.0" />
+                     </padding>
+                  </CheckBox>
+               </children>
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+         <children>
+            <ListView fx:id="displayMenu" layoutX="15.0" layoutY="15.0" onEditStart="#displayMenu" prefHeight="200.0" prefWidth="391.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</GridPane>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="185.0" maxWidth="280.0" minHeight="185.0" minWidth="280.0" prefHeight="185.0" prefWidth="280.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PaymentScreenCashController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="48.0" prefWidth="207.0">
+         <children>
+            <Label text="Payment Amount:" />
+            <TextField fx:id="paymentAmounttxt" prefHeight="25.0" prefWidth="84.0">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox alignment="TOP_CENTER" prefHeight="37.0" prefWidth="207.0">
+         <children>
+            <Button fx:id="submitAmountbtn" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#payByCash" text="Confirm Amount">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </HBox>
+      <Label fx:id="totallbl" text="Total:">
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </Label>
+      <Label fx:id="totalPaidlbl" text="Total Paid:">
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </Label>
+      <Label fx:id="changelbl" text="Change:" />
+   </children>
+</VBox>
